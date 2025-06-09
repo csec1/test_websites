@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Simple Login Page</title>
   <style>
     body {
@@ -30,29 +30,34 @@
 <body>
   <h2>Login</h2>
   <form id="loginForm">
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <input type="submit" value="Login">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <input type="submit" value="Login" />
     <div class="message" id="message"></div>
   </form>
 
   <script>
-    const loginForm = document.getElementById('loginForm');
-    const message = document.getElementById('message');
+    const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
 
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener("submit", function (event) {
       event.preventDefault(); // prevent form submission
 
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
 
       // Hardcoded credentials for demo purposes
-      if (username === 'admin' && password === 'password123') {
-        message.style.color = 'green';
-        message.textContent = 'Login successful!';
+      if (username === "admin" && password === "password123") {
+        message.style.color = "green";
+        message.textContent = "Login successful! Redirecting...";
+
+        // Redirect after a short delay (1.5 seconds)
+        setTimeout(() => {
+          window.location.href = "https://csec1.github.io/test_websites/simple_login_website/";
+        }, 1500);
       } else {
-        message.style.color = 'red';
-        message.textContent = 'Invalid username or password.';
+        message.style.color = "red";
+        message.textContent = "Invalid username or password.";
       }
     });
   </script>
